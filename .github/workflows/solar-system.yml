@@ -30,11 +30,8 @@ jobs:
         - name: Unit Testing
           run: npm test
           
-    archive-test:      
-        name: Archive Test Result
-        runs-on: ubuntu-latest
-        steps:
-        - name: Upload the artifact
+        - name: Archive Test Result
+          if: always()
           uses: actions/upload-artifact@v3
           with:
             name: Mocha-Test-Result
