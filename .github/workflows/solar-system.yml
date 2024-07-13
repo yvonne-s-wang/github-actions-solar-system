@@ -32,7 +32,6 @@ jobs:
             name: Mocha-Test-Result
             path: test-results.xml
 
-jobs:
     code-coverage:
         name: Code Coverage
         runs-on: ubuntu-latest
@@ -53,5 +52,9 @@ jobs:
           run: npm run code-coverage
           
         - name: Code-Coverage-Result
-          path: coverage
-          retention-days: 5
+          uses: actions/upload-artifact@v3  
+          with:
+            path: coverage
+            retention-days: 5
+          
+
