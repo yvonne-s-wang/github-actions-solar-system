@@ -49,11 +49,12 @@ jobs:
     
         - name: Run Code-coverage
           continue-on-error: true
-          run: npm run code-coverage
+          run: npm run coverage
           
         - name: Code-Coverage-Result
           uses: actions/upload-artifact@v3  
           with:
+            name: code-coverage-result
             path: coverage
             retention-days: 5
           
