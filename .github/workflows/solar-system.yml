@@ -65,7 +65,7 @@ jobs:
           - uses: azure/k8s-set-context@v4
             with:
               method: kubeconfig
-              kubeconfig: $ {{ secret.KUBECONFIG }}
+              kubeconfig: ${{ secret.KUBECONFIG }}
           - run: kubectl version --short -o yaml
           
 
